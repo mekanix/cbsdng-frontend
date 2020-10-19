@@ -11,6 +11,7 @@ import {
   EmptyTemplate,
 } from 'freenit'
 import { withRouter } from 'react-router-dom'
+import Instance from 'pages/instance'
 import Landing from 'pages/landing'
 
 
@@ -22,6 +23,10 @@ const Provider = (props) => {
     auth: new Auth.store(useState(Auth.initial.detail)),
     history: props.history,
     landing: new Landing.store(useState(Landing.initial.detail)),
+    instance: new Instance.store(
+      useState(Instance.initial.detail),
+      useState(Instance.initial.list),
+    ),
     notification: new EmptyTemplate.store(
       useState(EmptyTemplate.initial.detail),
     ),

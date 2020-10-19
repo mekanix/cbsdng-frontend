@@ -7,6 +7,7 @@ import {
   RoleList,
   UserList,
 } from 'freenit'
+import { InstanceList } from 'components'
 import Template from 'templates/default/detail'
 
 import styles from './styles'
@@ -19,6 +20,7 @@ class AdminDashboard extends React.Component {
         <Paper style={styles.root}>
           <UserList />
           <RoleList />
+          <InstanceList />
         </Paper>
       </Template>
     )
