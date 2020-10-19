@@ -23,6 +23,7 @@ import ProfileIcon from '@material-ui/icons/AccountCircle'
 import MenuIcon from '@material-ui/icons/Menu'
 import RoleIcon from '@material-ui/icons/People'
 import UserIcon from '@material-ui/icons/PeopleOutline'
+import InstanceIcon from '@material-ui/icons/ViewList'
 
 import styles from './styles'
 
@@ -72,6 +73,16 @@ class Template extends React.Component {
                 <DashboardIcon />
               </ListItemIcon>
               Dashboard
+            </MenuItem>
+          </Link>
+        ),
+        (
+          <Link to="/instances" key="instances">
+            <MenuItem>
+              <ListItemIcon>
+                <InstanceIcon />
+              </ListItemIcon>
+              Instances
             </MenuItem>
           </Link>
         ),
@@ -144,7 +155,7 @@ class Template extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Link to="/" data-id="app">
-                Freenit
+                CBSDng
               </Link>
             </Typography>
             {BarLinks}
