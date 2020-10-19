@@ -9,6 +9,7 @@ import {
   rest,
 } from 'freenit'
 import Dashboard from 'pages/dashboard'
+import Instance from 'pages/instance'
 import Landing from 'pages/landing'
 import Role from 'pages/role'
 import User from 'pages/user'
@@ -25,6 +26,7 @@ const Routing = () => {
       <Route exact path="/" component={Landing.detail} />
       <Route exact path="/confirm/:token" component={Auth.confirm} />
       <Route exact path="/dashboard" component={Dashboard.detail} />
+      <Route exact path="/instances" component={Instance.list} />
       <Route exact path="/login" component={Auth.login} />
       <Route exact path="/profile" component={Profile.detail} />
       <Route exact path="/register" component={Auth.register} />
