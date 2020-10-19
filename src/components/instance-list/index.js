@@ -9,12 +9,29 @@ import {
   CardContent,
   Typography,
 } from '@material-ui/core'
-import { withStore } from 'freenit'
+import {
+  errors,
+  withStore,
+} from 'freenit'
 
 import styles from './styles'
 
 
 class InstanceList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.fetch()
+  }
+
+  fetch = async () => {
+    const { instance, notification } = this.props.store
+    const response = await instance.fetchAll()
+    if (!response.ok) {
+      const error = errors(response)
+      notification.show(`Error executing fetch: ${error.message}`)
+    }
+  }
+
   render() {
     return (
       <Badge

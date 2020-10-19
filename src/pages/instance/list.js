@@ -52,7 +52,7 @@ class InstanceList extends React.Component {
       </List>
     ))
     return (
-      <Template>
+      <Template secure>
         {instanceList}
       </Template>
     )
