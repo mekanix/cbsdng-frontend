@@ -5,5 +5,6 @@ module.exports = function(app) {
   if (target) {
     app.use(createProxyMiddleware('/api', { target }))
     app.use(createProxyMiddleware('/media', { target }))
+    app.use(createProxyMiddleware('/socket.io', { target, ws: true }))
   }
 }
