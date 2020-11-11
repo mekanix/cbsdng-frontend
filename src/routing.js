@@ -10,6 +10,7 @@ import {
 } from 'freenit'
 import Dashboard from 'pages/dashboard'
 import Instance from 'pages/instance'
+import Socket from 'pages/socket'
 import Landing from 'pages/landing'
 import Role from 'pages/role'
 import User from 'pages/user'
@@ -35,6 +36,7 @@ const Routing = () => {
       <Route exact path="/role/:id" component={Role.detail} />
       <Route exact path="/roles" component={Role.list} />
       <Route exact path="/roles/:page" component={Role.list} />
+      <Route exact path="/socket" component={Socket.Interactive} />
       <Route exact path="/user/:id" component={User.detail} />
       <Route exact path="/users" component={User.list} />
       <Route exact path="/users/:page" component={User.list} />

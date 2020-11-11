@@ -12,6 +12,7 @@ import {
 } from 'freenit'
 import { withRouter } from 'react-router-dom'
 import Instance from 'pages/instance'
+import Socket from 'pages/socket'
 import Landing from 'pages/landing'
 
 
@@ -38,6 +39,7 @@ const Provider = (props) => {
       useState(Role.initial.detail),
       useState(Role.initial.list),
     ),
+    socket: new Socket.store(),
     user: new User.store(
       useState(User.initial.detail),
       useState(User.initial.list),
