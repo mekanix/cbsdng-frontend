@@ -39,7 +39,7 @@ const Provider = (props) => {
       useState(Role.initial.detail),
       useState(Role.initial.list),
     ),
-    socket: new Socket.store(),
+    socket: new Socket.store(useState(Socket.initial.messages)),
     user: new User.store(
       useState(User.initial.detail),
       useState(User.initial.list),

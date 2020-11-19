@@ -38,7 +38,7 @@ class InstanceList extends React.Component {
         <ListItem dense button>
           <ListItemText primary={instance.name} secondary={instance.hostname} />
           <ListItemSecondaryAction>
-            <Link to={`/instance/${instance.hypervisor}/${instance.name}`}>
+            <Link to={`/instance/${instance.name}`}>
               <Button
                 style={styles.details}
                 variant="outlined"

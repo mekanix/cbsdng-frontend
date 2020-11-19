@@ -27,6 +27,7 @@ const Routing = () => {
       <Route exact path="/confirm/:token" component={Auth.Confirm} />
       <Route exact path="/dashboard" component={Dashboard.Detail} />
       <Route exact path="/instances" component={Instance.List} />
+      <Route exact path="/instance/:name" component={Instance.Detail} />
       <Route exact path="/login" component={Auth.Login} />
       <Route exact path="/profile" component={Profile.Detail} />
       <Route exact path="/register" component={Auth.Register} />

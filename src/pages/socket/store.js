@@ -1,19 +1,15 @@
-import io from 'socket.io-client'
-
-
-let sock = null
+import socket from 'socketio'
 
 
 export default class SocketStore {
-  constructor() {
-    if (sock == null) {
-      sock = io({ transports: ['websocket'] })
-      sock.on('output', this.onOutput)
-    }
-    this.socket = sock
+  constructor(messages) {
+    this.messages = messages[0]
+    this.setMessages = messages[1]
+    socket.off('output')
+    socket.on('output', this.onOutput)
   }
 
-  onOutput = (data) => {
-    console.log(data)
+  onOutput = (message) => {
+    this.setMessages([ ...this.messages, message ])
   }
 }
