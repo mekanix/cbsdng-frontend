@@ -1,10 +1,16 @@
 import io from 'socket.io-client'
 
 
+let sock = null
+
+
 export default class SocketStore {
   constructor() {
-    this.socket = io({ transports: ['websocket'] })
-    this.socket.on('output', this.onOutput)
+    if (sock == null) {
+      sock = io({ transports: ['websocket'] })
+      sock.on('output', this.onOutput)
+    }
+    this.socket = sock
   }
 
   onOutput = (data) => {
