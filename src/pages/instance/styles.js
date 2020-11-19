@@ -1,4 +1,4 @@
-export default {
+const styles = {
   jail: {
     marginBottom: 5,
     backgroundColor: '#eee',
@@ -13,3 +13,6 @@ export default {
     marginRight: 20,
   },
 }
+
+
+export default styles

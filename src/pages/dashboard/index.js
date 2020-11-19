@@ -1,6 +1,7 @@
-import detail from './detail'
+import Detail from './detail'
 
 
-export default {
-  detail,
-}
+const Dashboard = { Detail }
+
+
+export default Dashboard

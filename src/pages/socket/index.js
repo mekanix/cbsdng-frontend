@@ -3,8 +3,11 @@ import store from './store'
 import Interactive from './interactive'
 
 
-export default {
+const socket = {
   Interactive,
   initial,
   store,
 }
+
+
+export default socket

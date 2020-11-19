@@ -1,2 +1,5 @@
-export default {
+const socket = {
 }
+
+
+export default socket

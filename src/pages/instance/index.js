@@ -1,10 +1,13 @@
 import initial from './initial'
-import list from './list'
+import List from './list'
 import store from './store'
 
 
-export default {
+const instance = {
+  List,
   initial,
-  list,
   store,
 }
+
+
+export default instance
