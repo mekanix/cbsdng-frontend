@@ -1,15 +1,11 @@
-export default {
-  jail: {
-    marginBottom: 5,
-    backgroundColor: '#eee',
-  },
-
-  bhyve: {
-    marginBottom: 5,
-    backgroundColor: '#aaa',
-  },
-
-  details: {
-    marginRight: 20,
+const styles = {
+  terminal: {
+    backgroundColor: 'black',
+    color: 'white',
+    borderRadius: 5,
+    padding: 10,
   },
 }
+
+
+export default styles

@@ -1,10 +1,15 @@
+import Detail from './detail'
+import List from './list'
 import initial from './initial'
-import list from './list'
 import store from './store'
 
 
-export default {
+const instance = {
+  Detail,
+  List,
   initial,
-  list,
   store,
 }
+
+
+export default instance

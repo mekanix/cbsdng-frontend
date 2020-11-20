@@ -1,4 +1,4 @@
-export default function getStyles(theme, height) {
+const getStyles = (theme, height) => {
   const styles = {
     ...theme,
 
@@ -36,3 +36,6 @@ export default function getStyles(theme, height) {
   }
   return styles
 }
+
+
+export default getStyles

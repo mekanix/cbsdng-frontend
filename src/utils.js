@@ -57,3 +57,12 @@ export const errors = (response) => {
   }
   return data
 }
+
+
+export const makeHtmlSafe = (str) => {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+}

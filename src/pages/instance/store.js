@@ -90,4 +90,36 @@ export default class InstanceStore {
       }
     }
   }
+
+  start = async (name) => {
+    try {
+      const response = await window.rest.get(`/instances/${name}/start`)
+      const result = {
+        ...response.data,
+        ok: true
+      }
+      return result
+    } catch (error) {
+      return {
+        ...error,
+        ok: false,
+      }
+    }
+  }
+
+  stop = async (name) => {
+    try {
+      const response = await window.rest.get(`/instances/${name}/stop`)
+      const result = {
+        ...response.data,
+        ok: true
+      }
+      return result
+    } catch (error) {
+      return {
+        ...error,
+        ok: false,
+      }
+    }
+  }
 }

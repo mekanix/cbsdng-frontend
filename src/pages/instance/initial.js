@@ -1,4 +1,4 @@
-export default {
+const instance = {
   detail: {
     id: 0,
     name: '',
@@ -10,3 +10,6 @@ export default {
     pages: 0,
   },
 }
+
+
+export default instance
