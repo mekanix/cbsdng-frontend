@@ -10,6 +10,7 @@ export default class SocketStore {
   }
 
   onOutput = (message) => {
+    console.log(message)
     this.setMessages([ ...this.messages, message ])
   }
 }

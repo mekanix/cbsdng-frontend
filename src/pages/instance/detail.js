@@ -7,12 +7,10 @@ import {
   withStore,
   errors,
 } from 'freenit'
-import ansispan from 'ansispan'
-import parse, { attributesToProps } from 'html-react-parser'
+import Ansi from 'ansi-to-react'
 
 import Types from 'types'
 import Template from 'templates/default/detail'
-import { makeHtmlSafe } from 'utils'
 import styles from './styles'
 
 
@@ -32,20 +30,8 @@ class InstanceDetail extends React.Component {
 
   render() {
     const { messages } = this.props.store.socket
-    const display = messages.map(line => {
-      if ([-1, Types.EXIT, Types.CONNECTION_CLOSED].includes(line.type)) {
-        return null
-      }
-      const safeHtml = ansispan(makeHtmlSafe(line.payload))
-      const element = parse(safeHtml, {
-        replace: node => {
-          if (node.attribs && node.name === 'hr') {
-            const props = attributesToProps(node.attribs)
-            return <hr {...props} key={new Date()} />
-          }
-        }
-      })
-      return element
+    const display = messages.filter(message => ![-1, Types.EXIT, Types.CONNECTION_CLOSED].includes(message.type)).map(message => {
+      return <Ansi>{message.payload}</Ansi>
     })
     return (
       <Template secure>
